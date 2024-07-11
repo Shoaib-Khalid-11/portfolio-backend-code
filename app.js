@@ -35,7 +35,11 @@ app.use("/api/v1/timeline", timelineRouter);
 app.use("/api/v1/softwareapplication", softwareApplicationRouter);
 app.use("/api/v1/skill", skillRouter);
 app.use("/api/v1/project", projectRouter);
-
+app.get("/", (req, res) => {
+  res.json({
+    message: "Hello World",
+  });
+});
 dbConnection();
 app.use(errorMiddleware);
 export default app;
